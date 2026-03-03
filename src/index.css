@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/vilonti');
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -36,13 +38,51 @@ html, body, #root {
   display: none;
 }
 
-/* ── buttons — desktop: column, bottom-right ── */
-.cs-buttons {
+/* ── overlay container: centered, 25vh from bottom on both desktop and mobile ── */
+.cs-overlay {
   position: fixed;
-  bottom: 32px;
-  right: 32px;
+  bottom: 15vh;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  z-index: 10;
+}
+
+/* ── email CTA button ── */
+.cs-email-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 48px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #4a9e8e;
+  font-family: 'Vilonti', system-ui, -apple-system, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.cs-email-btn:hover {
+  background: #000;
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* ── buttons — row on both desktop and mobile ── */
+.cs-buttons {
+  display: flex;
+  flex-direction: row;
   gap: 14px;
   z-index: 10;
 }
@@ -71,7 +111,7 @@ html, body, #root {
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* ── mobile: single row, 25vh from bottom ── */
+/* ── mobile ── */
 @media (max-width: 767px) {
   .cs-video--desktop {
     display: none;
@@ -79,14 +119,6 @@ html, body, #root {
 
   .cs-video--mobile {
     display: block;
-  }
-
-  .cs-buttons {
-    bottom: 20vh;
-    right: 50%;
-    transform: translateX(50%);
-    flex-direction: row;
-    gap: 16px;
   }
 
   .cs-btn {
