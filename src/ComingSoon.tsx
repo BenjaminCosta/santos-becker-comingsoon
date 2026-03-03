@@ -20,9 +20,21 @@ export default function ComingSoon() {
       </video>
 
       <div className="cs-overlay">
-        <a href="mailto:info@santosbecker.com" className="cs-email-btn">
-          ENVIAR CORREO
-        </a>
+        <a
+  href="mailto:info@santosbecker.com"
+  className="cs-email-btn"
+  onClick={() => {
+  setTimeout(() => {
+    window.open(
+      'https://mail.google.com/mail/?view=cm&fs=1&to=info@santosbecker.com',
+      '_blank',
+      'noreferrer'
+    )
+  }, 300)
+}}
+>
+  ENVIAR CORREO
+</a>
         <nav className="cs-buttons">
           {links.map(({ icon, label, href, newTab }) => (
             <a
