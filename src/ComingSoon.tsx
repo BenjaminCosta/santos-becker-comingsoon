@@ -1,11 +1,13 @@
 import videoDesktop from './assets/video-desktop.mp4'
 import videoMobile from './assets/video-mobile.mp4'
+import { FaWhatsapp, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
+import { MdEmail } from 'react-icons/md'
 
 const links = [
-  { label: 'WhatsApp',  href: 'https://wa.me/525566177712',                        newTab: true  },
-  { label: 'Instagram', href: 'https://www.instagram.com/santosbecker_sc/',         newTab: true  },
-  { label: 'LinkedIn',  href: 'https://www.linkedin.com/company/santos-becker/',    newTab: true  },
-  { label: 'Email',     href: 'mailto:info@santosbecker.com',                       newTab: false },
+  { icon: <FaWhatsapp />,   label: 'WhatsApp',  href: 'https://wa.me/525566177712',                     newTab: true  },
+  { icon: <FaInstagram />,  label: 'Instagram', href: 'https://www.instagram.com/santosbecker_sc/',      newTab: true  },
+  { icon: <FaLinkedinIn />, label: 'LinkedIn',  href: 'https://www.linkedin.com/company/santos-becker/', newTab: true  },
+  { icon: <MdEmail />,      label: 'Email',     href: 'mailto:info@santosbecker.com',                    newTab: false },
 ]
 
 export default function ComingSoon() {
@@ -19,14 +21,16 @@ export default function ComingSoon() {
       </video>
 
       <nav className="cs-buttons">
-        {links.map(({ label, href, newTab }) => (
+        {links.map(({ icon, label, href, newTab }) => (
           <a
             key={label}
             href={href}
             className="cs-btn"
+            aria-label={label}
+            title={label}
             {...(newTab ? { target: '_blank', rel: 'noreferrer' } : {})}
           >
-            {label}
+            {icon}
           </a>
         ))}
       </nav>
