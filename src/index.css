@@ -103,6 +103,21 @@ html, body, #root {
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
 }
 
+/* ── tap hint (iOS fallback) ── */
+.cs-tap-hint {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 5;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: system-ui, -apple-system, Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
 /* ── mobile ── */
 @media (max-width: 768px) {
   .cs-btn {
