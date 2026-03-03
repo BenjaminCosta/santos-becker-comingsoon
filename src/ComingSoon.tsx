@@ -85,7 +85,7 @@ export default function ComingSoon() {
       </video>
 
       {needsTap && isIOS() && (
-        <div className="cs-tap-hint">Toca para reproducir</div>
+        <div className="cs-tap-hint"></div>
       )}
 
       <div className="cs-overlay">
