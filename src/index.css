@@ -35,7 +35,7 @@ html, body, #root {
 /* ── overlay: centrado, 25vh desde el bottom ── */
 .cs-overlay {
   position: fixed;
-  bottom: 12vh;
+  bottom: 16vh;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -128,5 +128,13 @@ html, body, #root {
 
   .cs-btn:hover {
     transform: scale(1.08);
+  }
+}
+
+/* ── pantallas medianas (entre 769px y 1260px) ── */
+@media (min-width: 769px) and (max-width: 1260px) {
+  .cs-overlay {
+    bottom: 14vh;
+    gap: 16px;
   }
 }
