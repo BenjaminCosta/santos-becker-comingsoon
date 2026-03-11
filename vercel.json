@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    { "source": "/english.html", "destination": "/", "permanent": true },
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/about.html", "destination": "/", "permanent": true },
+    { "source": "/services.html", "destination": "/", "permanent": true },
+    { "source": "/contact.html", "destination": "/", "permanent": true }
+  ]
+}
